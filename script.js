@@ -39,34 +39,37 @@ function playRound(playerSelection, computerSelection){
         else return "You Win! Scissors beats Paper"
     }
 }
-function game(){
-    //initial score for the computer and player are 0
-    let userScore = 0;
-    let computerScore = 0;
-    //looping 5 times because there will be 5 rounds
-    for(let i = 0; i < 5; i++){
-        //store the result of the match in a string
-        let result = playRound(prompt(), computerPlay());
-        //show the player the results of the match
-        alert(result);
-        //if the result includes win i know the player has won so i can increment the score by one
-        if(result.includes("Win")){
-            userScore++;
-            
-        }
-        // Otherwise give the computer a point
-        else if(result.includes("Lose")){
-            computerScore++;
-        }
-    }
-    //Now at the end of the game i just see who has a bigger value to determine if the player has lost or won, or possibly a draw
-    if(userScore > computerScore) {
-        alert(`You have won ${userScore}-${computerScore} :)`);
-    }
-    else if(userScore < computerScore){
-         alert(`You have lost ${userScore}-${computerScore} :(`);
-    } 
-    else{
-        alert(`It is a draw ${userScore}-${computerScore}`);
-    }
+function allUntilLastCharacter(word){
+    const size = word.length;
+    return word.slice(0,size-1);
 }
+function getScore(text){
+    const lengthOfString = text.length;
+    return text[lengthOfString-1];
+}
+function playGame(move){
+    let theUserDisplay = document.querySelector("#theUserScore");
+    let theComputerDisplay = document.querySelector("#theComputerScore");
+    let userScore = +getScore(document.querySelector("#theUserScore").textContent);
+    let computerScore = +getScore(document.querySelector("#theComputerScore").textContent);
+    if(userScore ===5 || computerScore === 5) return;
+    const result = playRound(move,computerPlay());
+    if(result.includes("Win")){
+        userScore++;
+        theUserDisplay.textContent =  allUntilLastCharacter(document.querySelector("#theUserScore").textContent) + userScore;
+
+        
+    }
+    // Otherwise give the computer a point
+    else if(result.includes("Lose")){
+        computerScore++;
+        theComputerDisplay.textContent =  allUntilLastCharacter(document.querySelector("#theComputerScore").textContent) + computerScore;
+
+    }
+
+
+
+}
+
+const buttonList = document.querySelectorAll("button");
+buttonList.forEach(button => button.addEventListener("click", (e) => playGame(e.target.value)));

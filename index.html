@@ -3,6 +3,7 @@
     <head>
         <meta charset = "UTF-8">
         <link rel = "stylesheet" href = "styles.css">
+        <script src = "script.js" defer></script>
     </head>
     <body>
         <div class = "wrapper">
@@ -10,8 +11,8 @@
             <h1>Rock Paper Scissors</h1>
             </div>
             <div class = "scores">
-                <p>Your Score: 0</p>
-                <p>Computer Score: 0</p>
+                <p id = "theUserScore">Your Score: 0</p>
+                <p id = "theComputerScore">Computer Score: 0</p>
             </div>
             <div class = "imagesContainer">
                 <div id = "playerImage">
@@ -29,14 +30,12 @@
                 <p id = > Computer</p>
             </div>
             <div class ="button">
-                <button id = "rockButton" type = "submit">Rock</button>
-                <button id = "paperButton" type = "submit">Paper</button>
-                <button id = "scissorsButton" type = "submit">Scissors</button>
+                <button id = "rockButton" type = "button" value = "Rock">Rock</button>
+                <button id = "paperButton" type = "button" value = "Paper">Paper</button>
+                <button id = "scissorsButton" type = "button" value = "Scissors">Scissors</button>
             </div>
             
             <p id = "gameInstructions">Select one of the options above to play your move, games are up to 5</p>
         </div>
-        <script src = "script.js">
-        </script>
     </body>
 </html>
