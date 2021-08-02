@@ -2,9 +2,40 @@
 <html>
     <head>
         <meta charset = "UTF-8">
-
+        <link rel = "stylesheet" href = "styles.css">
     </head>
     <body>
+        <div class = "wrapper">
+            <div id = "title">
+            <h1>Rock Paper Scissors</h1>
+            </div>
+            <div class = "scores">
+                <p>Your Score: 0</p>
+                <p>Computer Score: 0</p>
+            </div>
+            <div class = "imagesContainer">
+                <div id = "playerImage">
+                    <img id = "thePlayersImage" src = "images/questionMark.jpeg" >
+                </div>
+                <div id = "versusLogo">
+                    <p>VS</p>
+                </div>
+                <div id = "computerImage">
+                <img id = "theComputersImage" src = "images/questionMark.jpeg">
+                </div>
+            </div>
+            <div class = "showingPlayerSides">
+                <p id = "youText"> You</p>
+                <p id = > Computer</p>
+            </div>
+            <div class ="button">
+                <button id = "rockButton" type = "submit">Rock</button>
+                <button id = "paperButton" type = "submit">Paper</button>
+                <button id = "scissorsButton" type = "submit">Scissors</button>
+            </div>
+            
+            <p id = "gameInstructions">Select one of the options above to play your move, games are up to 5</p>
+        </div>
         <script src = "script.js">
         </script>
     </body>

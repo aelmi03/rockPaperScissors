@@ -1,0 +1,67 @@
+.imagesContainer{
+    max-width: 100%;
+    object-fit: cover;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.showingPlayerSides{
+    align-items: baseline;
+    margin: 0px auto;
+    display:flex;
+    max-width: 80%;
+    font-size:35px;
+    justify-content: space-between;
+}
+#computerImage{
+    max-width:500px;
+}
+#playerImage{
+    max-width:500px;
+}
+ #computerImage img{
+    height: 100%; width: 100%;
+}
+#playerImage img{
+    height:100%;
+    width:100%;
+}
+#versusLogo{
+    font-size: 60px;
+    font-weight: bolder;
+}
+
+#title{
+    position: relative;
+    top:20px;
+    width: 500px;
+    font-size:24px;
+    font-weight: bold;
+    margin: 0px auto;
+}
+.button{
+    display: flex;
+    max-width: 34%;
+    justify-content: space-evenly;
+}
+
+.scores{
+    font-size:30px;
+}
+
+#gameInstructions{
+    margin: 40px 0px 0px 40px;
+    font-size:20px;
+}
+
+#rockButton, #scissorsButton, #paperButton{
+    width:100px;
+    height:50px;
+    font-weight: bold;
+}
+.wrapper{
+    background-color: orange;
+    height: 95vh;
+}
+
+
