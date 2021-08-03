@@ -60,6 +60,30 @@ function changeImage(move, node){
     }
     return;
 }
+function rematch(){
+    let theUserDisplay = document.querySelector("#theUserScore");
+    let theComputerDisplay = document.querySelector("#theComputerScore");
+    theUserDisplay.textContent =  allUntilLastCharacter(document.querySelector("#theUserScore").textContent) + 0;
+    theComputerDisplay.textContent =  allUntilLastCharacter(document.querySelector("#theComputerScore").textContent) + 0;
+    const rmeatchButton  = document.querySelector("#rematch");
+    rmeatchButton.style.cssText = "visibility:hidden";
+    let userImage = document.querySelector("#thePlayersImage");
+    let computerImage = document.querySelector("#theComputersImage");
+    userImage.setAttribute("src", "images/questionMark.jpeg");
+    computerImage.setAttribute("src", "images/questionMark.jpeg");
+    changeInstructions("Select one of the options above to play your move, games are up to 5");
+
+
+    
+}
+function showRematchButton(){
+    const rmeatchButton  = document.querySelector("#rematch");
+    rmeatchButton.style.cssText = "visibility:visible";
+}
+function changeInstructions(word){
+    const gameInstructions = document.querySelector("#gameInstructions");
+    gameInstructions.textContent = word;
+}
 function playGame(move){
     let theUserDisplay = document.querySelector("#theUserScore");
     let theComputerDisplay = document.querySelector("#theComputerScore");
@@ -67,27 +91,40 @@ function playGame(move){
     let computerScore = +getScore(document.querySelector("#theComputerScore").textContent);
     let userImage = document.querySelector("#thePlayersImage");
     let computerImage = document.querySelector("#theComputersImage");
-    if(userScore === 5 || computerScore === 5) return;
+    if(userScore === 5 || computerScore === 5) {
+        return;
+    }
+    
     changeImage(move, userImage);
     let computersMove = computerPlay();
     changeImage(computersMove, computerImage);
     const result = playRound(move,computersMove);
+    changeInstructions(result);
     if(result.includes("Win")){
         userScore++;
         theUserDisplay.textContent =  allUntilLastCharacter(document.querySelector("#theUserScore").textContent) + userScore;
-
+        if(userScore === 5) showRematchButton();
         
     }
     // Otherwise give the computer a point
     else if(result.includes("Lose")){
         computerScore++;
         theComputerDisplay.textContent =  allUntilLastCharacter(document.querySelector("#theComputerScore").textContent) + computerScore;
-
+        if(computerScore === 5) showRematchButton();
     }
 
 
 
 }
-
+const theRematchButton = document.querySelector("#rematch");
+theRematchButton.addEventListener("click", rematch);
 const buttonList = document.querySelectorAll("button");
-buttonList.forEach(button => button.addEventListener("click", (e) => playGame(e.target.value)));
+buttonList.forEach(button =>{
+     
+     button.addEventListener("click", (e) => {
+         if(e.target.value === "rematch"){
+             return;
+         }
+         playGame(e.target.value);
+     })
+     });
