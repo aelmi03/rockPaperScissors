@@ -47,13 +47,31 @@ function getScore(text){
     const lengthOfString = text.length;
     return text[lengthOfString-1];
 }
+function changeImage(move, node){
+    if(move === "Rock"){
+        console.log("hi");
+        node.setAttribute("src", "images/rock.png");
+    } else if(move === "Paper"){
+        node.setAttribute("src", "images/paper.png")
+    }
+    else if (move === "Scissors"){
+        node.setAttribute("src", "images/scissors.png");
+
+    }
+    return;
+}
 function playGame(move){
     let theUserDisplay = document.querySelector("#theUserScore");
     let theComputerDisplay = document.querySelector("#theComputerScore");
     let userScore = +getScore(document.querySelector("#theUserScore").textContent);
     let computerScore = +getScore(document.querySelector("#theComputerScore").textContent);
-    if(userScore ===5 || computerScore === 5) return;
-    const result = playRound(move,computerPlay());
+    let userImage = document.querySelector("#thePlayersImage");
+    let computerImage = document.querySelector("#theComputersImage");
+    if(userScore === 5 || computerScore === 5) return;
+    changeImage(move, userImage);
+    let computersMove = computerPlay();
+    changeImage(computersMove, computerImage);
+    const result = playRound(move,computersMove);
     if(result.includes("Win")){
         userScore++;
         theUserDisplay.textContent =  allUntilLastCharacter(document.querySelector("#theUserScore").textContent) + userScore;

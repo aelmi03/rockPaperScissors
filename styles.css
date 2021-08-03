@@ -2,14 +2,14 @@
     max-width: 100%;
     object-fit: cover;
     display:flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 .showingPlayerSides{
     align-items: baseline;
     margin: 0px auto;
     display:flex;
-    max-width: 80%;
+    max-width: 70%;
     font-size:35px;
     justify-content: space-between;
 }
@@ -50,7 +50,7 @@
 }
 
 #gameInstructions{
-    margin: 40px 0px 0px 40px;
+    margin: 100px 0px 0px 40px;
     font-size:20px;
 }
 
