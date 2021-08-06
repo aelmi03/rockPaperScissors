@@ -14,10 +14,12 @@
     justify-content: space-between;
 }
 #computerImage{
-    max-width:500px;
+    width:400px;
+    height: 250px;
 }
 #playerImage{
-    max-width:500px;
+    width:400px;
+    height: 250px;
 }
  #computerImage img{
     height: 100%; width: 100%;
@@ -46,17 +48,23 @@
 }
 
 .scores{
-    font-size:30px;
+    position: relative;
+    font-size:2.0em;
+    margin: 0px 0px 40px 10px;
 }
 
 #gameInstructions{
     margin: 100px 0px 0px 40px;
-    font-size:20px;
+    font-size:2em;
 }
 
 #rockButton, #scissorsButton, #paperButton{
-    width:100px;
+    width: 150px;
     height:50px;
+    border-radius: 15px;
+    font-size: 2em; 
+    background-color: rgb(226, 192, 128);
+    display:block;
     font-weight: bold;
 }
 .wrapper{
@@ -64,10 +72,16 @@
     height: 95vh;
 }
 #rematch {
+    display:block;
     visibility: hidden;
     display:block;
+    border-radius: 10px;
+    font-size: 2.5em;
+    font-weight: bolder;
+    background-color: rgb(255, 123, 0);
     margin: 0px 0px 0px 45%;
-    font-size: 30px;
 }
+
+
 
 

@@ -77,8 +77,8 @@ function rematch(){
     
 }
 function showRematchButton(){
-    const rmeatchButton  = document.querySelector("#rematch");
-    rmeatchButton.style.cssText = "visibility:visible";
+    const rematchButton  = document.querySelector("#rematch");
+    rematchButton.style.cssText = "visibility:visible";
 }
 function changeInstructions(word){
     const gameInstructions = document.querySelector("#gameInstructions");
